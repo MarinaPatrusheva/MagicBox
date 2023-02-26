@@ -9,17 +9,13 @@ public class MagicBox<T> {
     }
 
     public boolean add(T item) {
-        boolean haveNull = false;
         for (int i = 0; i < this.item.length; i++) {
             if (this.item[i] == null) {
                 this.item[i] = item;
-                haveNull = true;
-                break;
-            }else{
-                haveNull = false;
+                return true;
             }
         }
-        return haveNull;
+            return false;
     }
     public T pick(){
         int count = 0;
